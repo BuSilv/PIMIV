@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">        
+
+    </head>
+    <body>
+
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar navbar-custom w3-wide w3-padding w3-card">
+                <a href="index.html" class="w3-bar-item w3-button"><b>SkyGreens</b></a>
+
+                <div class="w3-right w3-hide-small">
+                    <button onclick=collaboradorsPage() class="w3-bar-item w3-button">Monitoramento</a>
+                    <button onclick=aboutPage() class="w3-bar-item w3-button">Fornecedores</a>
+                    <button onclick=contactPage() class="w3-bar-item w3-button">Produção</a>
+                    <button onclick=contactPage() class="w3-bar-item w3-button">Pedidos</a>
+                    <button onclick=contactPage() class="w3-bar-item w3-button">Usuários</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Tela de login-->
+        <div class="wrapper">
+            <div class="content-login">
+                <h2> Acesse sua conta </h2>
+                <p>Sua contribuição é essencial. Entre para colaborar conosco!</p>
+                <form class="box-login" id="loginForm" method="post" action="#">
+                    
+                    <input type="email" id="email" class="campo" name="email" placeholder="Usuario" required>
+                    <input type="password" id="password" class="campo" name="senha" placeholder="Senha" required>
+                    
+
+                  <div class="box-lembrar-senha">  
+                    <a class="link" onclick=alertpassword() id="pswrd">Esqueceu a senha?</a>
+                  </div>
+
+
+                  <input type="submit" class="botao_entrar" value="Entrar">
+                </form>
+                
+            </div><!--Form Content-->
+        </div><!--wrapper-->
+
+    </body>
+</html>
