@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">        
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">       
+        <script src="script.js"></script> 
 
     </head>
     <body>
@@ -16,20 +17,19 @@
                 <p>Sua contribuição é essencial. Entre para colaborar conosco!</p>
                 <form class="box-login" id="loginForm" method="post" action="#">
                     
-                    <input type="email" id="email" class="campo" name="email" placeholder="Usuario" required>
+                    <input type="user" id="user" class="campo" name="user" placeholder="Usuario" required>
                     <input type="password" id="password" class="campo" name="senha" placeholder="Senha" required>
                     
 
                   <div class="box-lembrar-senha">  
-                    <a class="link" onclick=alertpassword() id="pswrd">Esqueceu a senha?</a>
+                    <a class="link" onclick=forgotPassword() id="pswrd">Esqueceu a senha?</a>
                   </div>
 
-
-                  <input type="submit" class="botao_entrar" value="Entrar">
+                  <input type="submit" class="botao_entrar" onclick=login_submit() value="Entrar">
                 </form>
                 
-            </div><!--Form Content-->
-        </div><!--wrapper-->
+            </div>
+        </div>
 
     </body>
 </html>
