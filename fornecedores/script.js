@@ -1,9 +1,5 @@
-function show_proveedores_list(){
-    window.location.href = "listaFornecedores.html";
-}
-
 function show_proveedores(){
-    window.location.href = "fornecedores.html";
+    window.location.href = "listaFornecedores.html";
 }
 
 function filterTable() {
@@ -21,7 +17,6 @@ function filterTable() {
     });
 }
 
-
 document.getElementById("searchBar").addEventListener("keyup", function () {
     const searchText = this.value.toLowerCase();
     const rows = document.querySelectorAll("#supplierTable tbody tr");
@@ -36,5 +31,66 @@ document.getElementById("searchBar").addEventListener("keyup", function () {
     });
 });
 
-//import { show_orders } from '../pedidos/pedidos.js';
-//show_orders()
+const url_get_proveedores = "http://localhost:8080/skygreen/fornecedor";
+
+async function get_proveedores(token) { //TODO: testar conexão - não estou conseguindo fazer essa request
+
+    getData = {
+        token: token
+    };
+
+    try {
+        const response = await fetch(url_get_proveedores, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(getData)
+        });
+
+        if (response.ok) {
+            console.log("Consulta realizada com sucesso:", response.status);
+            return response;
+        } else {
+            console.log("Falha na consulta:", response.status);
+            return response;
+        }
+    } catch (error) {
+        console.error("Erro ao realizar a consulta:", error);
+        return response;
+    }
+}
+
+//função de substituir os valores la na tabela
+async function fetchSuppliers() { //TODO: verificar se funciona
+    const suppliers = await get_proveedores(token);
+
+    if (suppliers) {
+        const tableBody = document.getElementById('tableBody');
+
+        tableBody.innerHTML = '';
+
+        suppliers.forEach(supplier => {
+            const row = document.createElement('tr');
+            
+            row.innerHTML = `
+                <td>${supplier.nome}</td>
+                <td>${supplier.email}</td>
+                <td>${supplier.inscricao_estadual}</td>
+                <td>${supplier.cnpj}</td>
+                <td>${supplier.pais}</td>
+                <td>${supplier.telefone}</td>
+                <td>${supplier.cidade}</td>
+                <td>${supplier.estado}</td>
+                <td class="status">${supplier.status}</td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+    } else {
+        console.error('Erro ao buscar fornecedores:', error);
+    }
+}
+
+// Chame a função quando a página carregar ou em outro momento adequado
+window.onload = fetchSuppliers; //TODO: encaixar isso no codigo rs

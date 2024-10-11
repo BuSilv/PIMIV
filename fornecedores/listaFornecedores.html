@@ -29,7 +29,7 @@
                 <h2>Listagem de Fornecedores</h2>
                 <div class="search-filter-container">
                     <input type="text" id="searchBar" class="search-bar" placeholder="Buscar Fornecedor...">
-                    <select id="statusFilter" class="status-filter" onchange="filterTable()">
+                    <select id="statusFilter" class="status-filter" onchange="filterTable()"> <!--TODO: encaixar essa parte ai de status na nova consultas-->
                         <option value="all">Todos</option>
                         <option value="ativo">Ativos</option>
                         <option value="inativo">Inativos</option>
@@ -53,42 +53,7 @@
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr data-status="ativo">
-                            <td>PETRAS LOGÍSTICA</td>
-                            <td>nicolaspegap@petras.gov</td>
-                            <td>965.123.000.167</td>
-                            <td>68.188.339/0001-05</td>
-                            <td>Brasil</td>
-                            <td>12 96829-5569</td>
-                            <td>Caraguatatuba</td>
-                            <td>São Paulo</td>
-                            <td class="status">Ativo</td>
-                        </tr>
-                        <tr data-status="inativo">
-                            <td>TRANSPO BRASIL</td>
-                            <td>contato@transpobrasil.com.br</td>
-                            <td>123.456.789.000</td>
-                            <td>45.987.654/0001-99</td>
-                            <td>Brasil</td>
-                            <td>11 91234-5678</td>
-                            <td>São Paulo</td>
-                            <td>São Paulo</td>
-                            <td class="status">Inativo</td>
-                        </tr>
-                        <tr data-status="ativo">
-                            <td>SEMESUL BRASIL</td>
-                            <td>contato@transpobrasil.com.br</td>
-                            <td>126.576.995.371</td>
-                            <td>84.945.025/0001-62</td>
-                            <td>Brasil</td>
-                            <td>32 96251-5678</td>
-                            <td>Curitiba</td>
-                            <td>Curitiba</td>
-                            <td class="status">ativo</td>
-                        </tr>    
-                        <!-- add mais aqui  -->
-                    </tbody>
+                    <tbody id="tableBody"></tbody>
                 </table>
             </div>
         </div>

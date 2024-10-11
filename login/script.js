@@ -50,16 +50,18 @@ async function do_login(cpf, senha) {
             body: JSON.stringify(loginData)
         });
 
+        const token = await response.text();
+
         if (response.ok) {
             console.log("Login realizado com sucesso:", response.status);
-            return true;
+            return { success: true, token: token };
         } else {
             console.log("Falha no login:", response.status);
-            return false;
+            return { success: false, token: null };
         }
     } catch (error) {
         console.error("Erro ao realizar o login:", error);
-        return false;
+        return { success: false, token: null };
     }
 }
 

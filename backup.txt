@@ -59,3 +59,32 @@ if (response.ok) {
 import { show_proveedores } from '../fornecedores/showProveedores.js';
 
 show_proveedores();
+
+
+
+<table class="table">
+                    <tr>
+                        <th>Pedido</th>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Prazo de Entrega</th>
+                    </tr>
+                    <tbody id="tableBody"></tbody>
+                </table>
+
+
+.table {
+    width: 100%; 
+    border-collapse: collapse;
+    margin: 0 auto; 
+    text-align: left;
+    font-size: 18px; 
+}
+
+.table th {
+    font-weight: bold;
+    text-align: left;
+    padding: 10px; 
+    border-bottom: 1px solid #ccc;
+    white-space: nowrap;
+}
