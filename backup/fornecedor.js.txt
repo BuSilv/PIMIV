@@ -31,9 +31,9 @@ document.getElementById("searchBar").addEventListener("keyup", function () {
     });
 });
 
-const url_get_proveedores = "http://localhost:8080/skygreen/fornecedor";
+const url_get_proveedores = "http://localhost:8080/skygreen/fornecedor/";
 
-async function get_proveedores(token) { //TODO: testar conexão - não estou conseguindo fazer essa request
+async function get_proveedores(token) { //TODO: testar conexão - não estou conseguindo fazer essa request --> só vai se for adm, ta certo isso?
 
     getData = {
         token: token

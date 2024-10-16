@@ -36,17 +36,20 @@ async function get_orders(token) {
     }
 }
 
-async function gerarPedidos(pedidos) { //parametro = response da func de cima
+async function gerarPedidos(token) { //parametro = response da func de cima
 
     const pedidos = await get_orders(token);
+    const orderContent = document.getElementById('orderContent');
+    orderContent.innerHTML = ''; 
 
-    if (pedidos) {
-
-        const orderContent = document.getElementById('orderContent');
-        orderContent.innerHTML = ''; 
+    if (pedidos.length === 0) {
+        const noRecordsRow = document.createElement('div');
+        noRecordsRow.classList.add('no-records');
+        noRecordsRow.innerHTML = 'Nenhum pedido encontrado';
+        orderContent.appendChild(noRecordsRow);
+    } else {
 
         pedidos.forEach(pedido => {
-
             const orderDiv = document.createElement('div');
             orderDiv.classList.add('order');
 
@@ -59,10 +62,8 @@ async function gerarPedidos(pedidos) { //parametro = response da func de cima
 
             orderContent.appendChild(orderDiv);
         });
-    } else {
-        console.error('Erro ao gerar pedidos:', error);
-    }
+    } 
 }
 
-gerarPedidos(pedidos); //TODO: chamar la no html
+
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="pedidos.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  
+        <script src="script.js"></script> 
+
+    </head>
+    <body>
+        <div class="w3-top">
+            <div class="w3-bar navbar-custom w3-wide w3-padding w3-card">
+                <a href="home.html" class="w3-bar-item w3-button"><b>SkyGreens</b></a>
+
+                <div class="w3-right w3-hide-small">
+                    <button onclick=page() class="w3-bar-item w3-button">Monitoramento</button>
+                    <button onclick=show_proveedores() class="w3-bar-item w3-button">Fornecedores</button>
+                    <button onclick=show_production() class="w3-bar-item w3-button">Produção</button>
+                    <button onclick=show_orders() class="w3-bar-item w3-button">Pedidos</button>
+                    <button onclick=userpage() class="w3-bar-item w3-button">Usuários</button>
+                </div>
+            </div>
+        </div>
+
+       <!-- <div class="wrapper">
+            <div class="content" id="orderContent">
+                <script>window.onload = gerarPedidos();</script>
+                <table class="table">
+                    <tr>
+                        <th>Pedido</th>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Prazo de Entrega</th>
+                    </tr>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>-->
+
+        <div class="wrapper">
+            <div class="content" id="orderContent">
+                <div class="order">
+                    <p><strong>Pedido:</strong> #12345</p>
+                    <p><strong>Cliente:</strong> João Silva</p>
+                    <p><strong>Produto:</strong> Coentro</p>
+                    <p><strong>Prazo de Entrega:</strong> 2 dias</p>
+                </div>
+        
+                <div class="order">
+                    <p><strong>Pedido:</strong> #12346</p>
+                    <p><strong>Cliente:</strong> Maria Oliveira</p>
+                    <p><strong>Produto:</strong> Alface</p>
+                    <p><strong>Prazo de Entrega:</strong> 15 dias</p>
+                </div>
+        
+                <div class="order">
+                    <p><strong>Pedido:</strong> #12347</p>
+                    <p><strong>Cliente:</strong> Carlos Pereira</p>
+                    <p><strong>Produto:</strong> Espinafre</p>
+                    <p><strong>Prazo de Entrega:</strong> 7 dias</p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

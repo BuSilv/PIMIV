@@ -10,7 +10,7 @@ function login_submit(){
             if (success) {
                 alert("Login realizado com sucesso!"); 
                 console.log("Login realizado com sucesso!");
-                newpage(); 
+                homepage(); 
             } else {
                 console.log("Login falhou.");
                 alert("Usuário ou senha inválida. Por favor, tente novamente."); 
@@ -30,6 +30,10 @@ function forgotPassword() {
     } else {
         alert("Você precisa inserir um e-mail válido para recuperar a senha.");
     }
+}
+
+function homepage(){
+    window.location.href = "home.html";
 }
 
 const urlLogin = "http://localhost:8080/skygreen/auth/login";
