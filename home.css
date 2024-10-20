@@ -27,24 +27,44 @@ body {
 
 .homepage {
     display: flex;
-    align-items: center; /* Centraliza o card verticalmente */
-    height: 100vh; /* A tela ocupará toda a altura da viewport */
+    align-items: center; 
+    height: 100vh; 
+    gap: 30px;
 }
 
 .card {
     background-color: #304019;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    width: 50%; /* Ajusta para um tamanho mais adequado */
-    max-width: 250px; /* Evita que o card fique muito grande em telas grandes */
+    width: 100%; 
+    max-width: 250px;
     margin-left: 30px;
     text-align: center;
     margin-bottom: 15px;
-
 }
 
 .card:hover{
     background-color: #495c2e;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column; 
+}
+
+.info-card{
+    background-color: #b8bbb4;
+    border-radius: 10px;
+    width: 100%; 
+    height: 500px;
+    padding: 20px;
+    max-width: 250px; 
+    margin-left: 30px;
+    text-align: justify;
+    margin-bottom: 15px;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
 }
 
 .charts {
@@ -60,9 +80,11 @@ body {
     height: 200px;
     margin: 20px 0;
     margin-right: 150px;
+    display: flex;
+    align-items: center;
 }
 
-.chart {
+/* .chart {
     position: absolute;
     top: 0;
     left: 0;
@@ -70,15 +92,47 @@ body {
     height: 100%;
     background: conic-gradient(
         #304019 var(--value), 
-        #a59898 var(--value) 
+        #b8bbb4 var(--value) 
     );
     border-radius: 50%; 
+} */
+
+.chart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(50%);
 }
 
-
-
-p {
-    color: black;
+.chart::before,
+.chart::after {
+    content: '';
     position: absolute;
-    font-size: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(50%);
+    background: conic-gradient(
+        #304019 var(--value),
+        #495c2e var(--value),
+        #495c2e calc(var(--value) + var(--second-value)),
+        #b8bbb4 calc(var(--value) + var(--second-value)),
+        #b8bbb4 100%
+    );
+    border-radius: 50%;
+}
+
+.label {
+    color: rgb(255, 255, 255);
+    position: relative;
+    font-size: 12px;
+    /* transform: translate(-80%, -200%);  */
+}
+
+.label-plantio { 
+    top: 50%; /* Ajuste a posição vertical */
+    left: 60%; /* Ajuste a posição horizontal */
 }

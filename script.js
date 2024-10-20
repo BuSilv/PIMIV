@@ -22,6 +22,10 @@ function show_production(){
     window.location.href = "producao.html";
 }
 
+function monitoring_page(){
+    window.location.href = "monitoramento.html";
+}
+
 //TODO: não tenho a api ainda
 const url_get_orders = "http://localhost:8080/skygreen/pedido/";
 
@@ -264,30 +268,44 @@ function inactivateUser(button) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const iframe = document.getElementById("fornecedores-iframe");
-    iframe.onload = function() {
-        getFornecedoresFromTable();
-    };
-});
+// document.addEventListener("DOMContentLoaded", function() {
+//     const iframe = document.getElementById("fornecedores-iframe");
 
-function getFornecedoresFromTable() {
-    const iframe = document.getElementById("fornecedores-iframe");
-    const table = iframe.contentDocument.getElementById("supplierTable");
+//     iframe.onload = function() {
+//         try {
+//             getFornecedoresFromTable();
+//         } catch (error) {
+//             console.error("Erro ao acessar o conteúdo do iframe:", error);
+//         }
+//     };
+// });
 
-    if (!table) {
-        console.error("A tabela de fornecedores não foi encontrada no iframe.");
-        return;
-    }
+// function getFornecedoresFromTable() {
+//     const iframe = document.getElementById("fornecedores-iframe");
+//     const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-    const fornecedoresList = document.getElementById("fornecedores-list"); 
-    const rows = table.querySelectorAll("tbody tr"); 
+//     if (!iframeDoc) {
+//         console.error("O documento do iframe não está acessível.");
+//         return;
+//     }
 
-    rows.forEach(row => {
-        const nome = row.cells[0].textContent;
+//     const table = iframeDoc.getElementById("supplierTable");
 
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `<strong>${nome}</strong><br>`;
-        fornecedoresList.appendChild(listItem); 
-    });
-}
+//     if (!table) {
+//         console.error("A tabela de fornecedores não foi encontrada no iframe.");
+//         return;
+//     }
+
+//     const fornecedoresList = document.getElementById("fornecedores-list");
+//     const rows = table.querySelectorAll("tbody tr");
+
+//     fornecedoresList.innerHTML = "";
+
+//     rows.forEach(row => {
+//         const nome = row.cells[0].textContent;
+
+//         const listItem = document.createElement("li");
+//         listItem.innerHTML = `<strong>${nome}</strong><br>`;
+//         fornecedoresList.appendChild(listItem);
+//     });
+// }
