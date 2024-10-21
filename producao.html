@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="usuarios.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">      
-    <script src="script.js" defer></script> 
-
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="producao.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <script src="script.js" defer></script> 
     </head>
     <body>
         <div class="w3-top">
@@ -21,7 +20,26 @@
                 </div>
             </div>
         </div>
-    
 
+        <div class="container-prod">
+            <h2>Produção</h2>
+            <div class="menu">
+                <button class="menu-item" onclick=report_page()>Relatório</button>
+                <button class="menu-item">Estoque</button>
+                <button class="menu-item" onclick=pageInsumo()>Insumos</button>
+            </div>
+
+            <div class="prod-grid">
+                <div class="prod-item">
+                    <p>Espinafre</p>
+                </div>
+                <div class="prod-item">
+                    <p>Espinafre</p>
+                </div>
+                <div class="prod-item">
+                    <p>Espinafre</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

@@ -26,6 +26,10 @@ function monitoring_page(){
     window.location.href = "monitoramento.html";
 }
 
+function report_page(){
+    window.location.href = "relatorio.html";
+}
+
 //TODO: não tenho a api ainda
 const url_get_orders = "http://localhost:8080/skygreen/pedido/";
 
