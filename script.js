@@ -30,6 +30,23 @@ function report_page(){
     window.location.href = "relatorio.html";
 }
 
+function sales_page(){
+    window.location.href = "pedido_venda.html";
+}
+
+function purchase_page(){
+    window.location.href = "pedido_compra.html";
+}
+
+function logout(){
+    const userConfirmed = confirm('Tem certeza que deseja desconectar?');
+    
+    if (userConfirmed) {
+        window.location.href = "login.html";
+    } 
+    
+}
+
 //TODO: não tenho a api ainda
 const url_get_orders = "http://localhost:8080/skygreen/pedido/";
 
@@ -268,6 +285,25 @@ function inactivateUser(button) {
         if (confirmReactivate) {
             statusElement.textContent = "Ativo"; 
             button.textContent = "Inativar Usuário"; 
+        }
+    }
+}
+
+function toggleProfileMenu() {
+    var menu = document.getElementById("profileMenu");
+    menu.classList.toggle("show");
+}
+
+document.querySelector('.profile-icon-container').addEventListener('click', function () {
+    document.querySelector('.profile-menu').classList.toggle('show');
+});
+
+// Fechar o menu se clicar fora dele
+window.onclick = function(event) {
+    var menu = document.getElementById("profileMenu");
+    if (!event.target.matches('.profile-icon') && !event.target.matches('.profile-icon-container')) {
+        if (menu.classList.contains('show')) {
+            menu.classList.remove('show');
         }
     }
 }
